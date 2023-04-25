@@ -4,6 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+
 """
 # Welcome to Streamlit!
 
@@ -38,7 +39,7 @@ with st.echo(code_location='below'):
         ydata.append(y)
     
     ax = fig.gca()
-    ax.scatter(xdata, ydata)
+    ax.scatter(xdata, ydata, s=1)
     st.pyplot(fig, clear_figure=True)
 
     # st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
