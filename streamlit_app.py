@@ -36,6 +36,7 @@ with st.echo(code_location='below'):
         # data.append(Point(x, y))
         xdata.append(x)
         ydata.append(y)
+        
     fig.scatter(x, y)
     st.pyplot(fig, clear_figure=True)
 
