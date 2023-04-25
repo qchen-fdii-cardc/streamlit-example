@@ -38,8 +38,8 @@ with st.echo(code_location='below'):
         ydata.append(y)
     
     ax = fig.gca()
-    ax.scatter(x, y)
-    st.pyplot(fig, clear_figure=False)
+    ax.scatter(xdata, ydata)
+    st.pyplot(fig, clear_figure=True)
 
     # st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
     #     .mark_circle(color='#0068c9', opacity=0.5)
