@@ -38,8 +38,8 @@ with st.echo(code_location='below'):
         xdata.append(x)
         ydata.append(y)
     
-    ax.set_axis_off()
-    ax.grid(False)
+    # ax.set_axis_off()
+    # ax.grid(False)
     ax = fig.gca()
     ax.scatter(xdata, ydata, s=1)
     st.pyplot(fig, clear_figure=True)
