@@ -37,7 +37,8 @@ with st.echo(code_location='below'):
         xdata.append(x)
         ydata.append(y)
         
-    fig.scatter(x, y)
+    ax = fig.gca()
+    ax.scatter(x, y)
     st.pyplot(fig, clear_figure=True)
 
     # st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
