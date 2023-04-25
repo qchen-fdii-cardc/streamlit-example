@@ -37,7 +37,6 @@ with st.echo(code_location='below'):
         xdata.append(x)
         ydata.append(y)
     
-    st.text(f"{len(x)}x{len(y)}")
     ax = fig.gca()
     ax.scatter(x, y)
     st.pyplot(fig, clear_figure=False)
