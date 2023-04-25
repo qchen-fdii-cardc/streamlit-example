@@ -3,7 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-
+import matplotlib.pyplot as plt
 """
 # Welcome to Streamlit!
 
@@ -21,9 +21,11 @@ with st.echo(code_location='below'):
     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
 
     Point = namedtuple('Point', 'x y')
-    data = []
+    xdata = []
+    ydata = []
 
     points_per_turn = total_points / num_turns
+    fig = plt.figure()
 
     for curr_point_num in range(total_points):
         curr_turn, i = divmod(curr_point_num, points_per_turn)
@@ -31,8 +33,12 @@ with st.echo(code_location='below'):
         radius = curr_point_num / total_points
         x = radius * math.cos(angle)
         y = radius * math.sin(angle)
-        data.append(Point(x, y))
+        # data.append(Point(x, y))
+        xdata.append(x)
+        ydata.append(y)
+    fig.scatter(x, y)
+    st.pyplot(fig, clear_figure=True)
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
-        .mark_circle(color='#0068c9', opacity=0.5)
-        .encode(x='x:Q', y='y:Q'))
+    # st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
+    #     .mark_circle(color='#0068c9', opacity=0.5)
+    #     .encode(x='x:Q', y='y:Q'))
